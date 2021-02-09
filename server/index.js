@@ -6,7 +6,7 @@ const cors = require('cors')
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
-const config = require("./config/key");
+const config = require("./config/dev");
 
 // const mongoose = require("mongoose");
 // mongoose
@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use('/api/users', require('./routes/users'));
-
+app.use('/api/favorite', require('./routes/favorite'));
 
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
